@@ -28,7 +28,49 @@
 </head>
 <body>
     <!-- ============ header section ============ -->
-    <header></header>
+    <header id="stickyNav" class="w-full">
+      <div class="w-full bg-[#F9F7F3]">
+          <div class="container mx-auto px-4">
+              <div class="py-6 flex items-center justify-between lg:pt-0 lg:pb-6 lg:min-h-[140px]">
+                  <!-- ============ blog button -->
+                  <button class="bg-[#B4F461] py-3 px-8 rounded-lg font-lexend text-xl leading-[25px] font-semibold text-[#111111] hidden lg:block">Blog</button>
+                  <!-- ============ logo -->
+                  <div class="flex items-center gap-x-4">
+                      <img src="./assets/money-img/logo.png" alt="logo" class="size-[38px] lg:size-[48px]">
+                      <h1 class="font-lexend text-xl leading-[25px] font-semibold text-[#111111] hidden lg:block">Donate Bangladesh</h1>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                      <img src="./assets/money-img/coin.png" alt="coin icon" class="size-[27px]">
+                      <h1 class="font-lexend text-xl font-medium text-[#111111B3]"><span>10000</span> BDT</h1>
+                  </div>
+                  <!-- ============ mobile bar -->
+                  <div id="openBtn" class="cursor-pointer lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                      </svg>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- ============ donate and history button -->
+      <div class="w-full h-[100px] bg-white/30 backdrop-blur-sm flex items-center justify-center gap-x-3 pt-6 lg:h-[140px]">
+          <button class="py-3 px-5 bg-[#B4F461] border border-[#B4F461] rounded-md font-lexend text-base font-semibold text-[#111111] lg:py-4 lg:px-8 lg:text-xl lg:leading-[25px]">Donate</button>
+          <button class="py-3 px-5 bg-white border border-[#1111114D] rounded-md font-lexend text-base font-semibold text-[#111111B3] transition duration-200 ease-in-out hover:bg-[#B4F461] hover:border-[#B4F461] hover:text-[#111111] lg:py-4 lg:px-8 lg:text-xl lg:leading-[25px]">History</button>
+      </div>
+      <!-- ============ mobile responsive side bar -->
+      <div id="mobileNav" class="w-full sm:w-[400px] h-screen bg-white/30 backdrop-blur-sm fixed top-[0%] right-[-120%] duration-500">
+          <!-- ============ close btn -->
+          <div id="closeBtn" class="w-[30px] h-[30px] flex items-center justify-center ml-6 mt-6 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+          </div>
+          <!-- ============ nav link list -->
+          <div class="w-full mt-10">   
+              <a href="#" id="navLink" class="py-4 px-7 bg-[#B4F461] block font-lexend text-base font-medium text-[#111111]">Blog</a>
+          </div>
+      </div>
+    </header>
 
     <!-- ============ main section ============ -->
     <main></main>
