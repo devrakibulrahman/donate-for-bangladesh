@@ -44,12 +44,25 @@
                         <h1 class="font-lexend text-xl font-medium text-[#111111B3]"><span>10000</span> BDT</h1>
                     </div>
                     <!-- ============ mobile bar -->
-                    <div class="cursor-pointer lg:hidden">
+                    <div id="openBtn" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- ============ mobile responsive side bar -->
+        <div id="mobileNav" class="w-full sm:w-[400px] h-screen bg-white/30 backdrop-blur-sm fixed top-[0%] right-[-120%] duration-300">
+            <!-- ============ close btn -->
+            <div id="closeBtn" class="w-[30px] h-[30px] flex items-center justify-center ml-6 mt-6 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </div>
+            <!-- ============ nav link list -->
+            <div class="w-full mt-10">   
+                <a href="#" id="navLink" class="py-4 px-7 bg-[#B4F461] block font-lexend text-base font-medium text-[#111111]">Blog</a>
             </div>
         </div>
     </header>
