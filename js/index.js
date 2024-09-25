@@ -116,7 +116,7 @@ donateBtn.addEventListener('click', function(){
 // home page to blog page switching event
 const blogBtn = document.getElementById('blogBtn');
 blogBtn.addEventListener('click', function(){
-    window.location.href = '../html-file/index.html';
+    window.location.href = './blog.html';
 });
 
 // calculate function

@@ -40,5 +40,5 @@ navLink.addEventListener('click', function(){
 // blog page to home page switching event
 const homeBtn = document.getElementById('homeBtn');
 homeBtn.addEventListener('click', function(){
-    window.location.href = '../html-file/blog.html';
+    window.location.href = './index.html';
 });
