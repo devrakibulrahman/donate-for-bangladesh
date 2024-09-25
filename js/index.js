@@ -166,7 +166,7 @@ blogBtn.addEventListener('click', function(){
 // });
 
 // calculate function
-function calculateBalance(input, balance, displayAmount){
+function calculateBalance(input, balance, displayAmount, location){
     const inputField = input;
     const inputValue = parseFloat(inputField.value);
 
@@ -178,6 +178,12 @@ function calculateBalance(input, balance, displayAmount){
 
     if(isNaN(inputValue)){
         mainBalance.innerText = balanceValue;
+        return;
+    };
+
+    if(inputValue === 0 || inputValue < 0){
+        alert('We not kidding with you');
+        inputField.value = ''        
         return;
     };
 
@@ -197,7 +203,36 @@ function calculateBalance(input, balance, displayAmount){
     mainBalance.innerText = donateAmountSubtractToBalance;
     
     inputField.value = '';
+
+    historyTab(donateAmountShow, location)
     
+    return;
+};
+
+// history tab functionality
+function historyTab(donateAmount, location){
+    const div = document.createElement('div');
+    div.className = "w-full p-8 bg-white border border-[#1111111A] rounded-lg lg:rounded-2xl";
+
+    const h1 = document.createElement('h1');
+    h1.className = "font-lexend text-lg font-bold text-[#111111] mb-4 md:text-xl";
+    
+    const p = document.createElement('p');
+    p.className = "font-lexend text-[13px] font-light text-[#111111B3] md:text-base";
+
+    const donateAmountNum = donateAmount;
+    const donateLocation = location;
+    
+    const localTime = new Date();
+
+    h1.innerText = `${donateAmountNum} Taka is ${donateLocation}, Bangladesh`;
+    p.innerText = `Date: ${localTime}`;
+
+    const containerDiv = document.getElementById('container');
+    containerDiv.appendChild(div);
+
+    div.append(h1, p);
+
     return;
 };
 
@@ -206,14 +241,9 @@ donateButtonOne.addEventListener('click', function(){
     const inputOne = document.getElementById('input-1');
     const balance = document.getElementById('balance');
     const displayAmountOne = document.getElementById('donateDisplay-1');
+    const location = "Donated for Flood at Noakhali-2024";
 
-    if(inputOne === ''){
-        balance.innerText;
-        return;
-    };
-
-    // emptyValidation(inputOne, balance);
-    calculateBalance(inputOne, balance, displayAmountOne);
+    calculateBalance(inputOne, balance, displayAmountOne, location);
 });
 
 const donateButtonTwo = document.getElementById('donateButton-2');
@@ -221,9 +251,9 @@ donateButtonTwo.addEventListener('click', function(){
     const inputTwo = document.getElementById('input-2');
     const balance = document.getElementById('balance');
     const displayAmountTwo = document.getElementById('donateDisplay-2');
+    const location = "Donated for Flood Relief in Feni"
 
-    // emptyValidation(inputTwo, balance);
-    calculateBalance(inputTwo, balance, displayAmountTwo);
+    calculateBalance(inputTwo, balance, displayAmountTwo, location);
 });
 
 const donateButtonThree = document.getElementById('donateButton-3');
@@ -231,9 +261,7 @@ donateButtonThree.addEventListener('click', function(){
     const inputThree = document.getElementById('input-3');
     const balance = document.getElementById('balance');
     const displayAmountThree = document.getElementById('donateDisplay-3');
+    const location = "Donated for Aid for Injured in the Quota Movement"
 
-    // emptyValidation(inputThree, balance);
-    calculateBalance(inputThree, balance, displayAmountThree);
+    calculateBalance(inputThree, balance, displayAmountThree, location);
 });
-
-// history tab functionality
