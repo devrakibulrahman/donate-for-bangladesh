@@ -11,6 +11,7 @@ openBtn.addEventListener('click', function(){
     );
 });
 
+// close and nav link function
 function addOrRemove(addId, removeId){
     const add = addId;
     add.classList.add(
@@ -118,53 +119,6 @@ blogBtn.addEventListener('click', function(){
     window.location.href = '../blog.html?#';
 });
 
-// calculation part
-
-// function for calculation
-// function calculateBalance(input, balance, displayAmount){
-//     const input = input;
-//     const inputValue = parseFloat(input.value);
-
-//     const balance = balance;
-//     const balanceValue = balance.innerText;
-//     const balanceToFixed = balanceValue.toFixed(2);
-//     const balanceToNum = parseFloat(balanceToFixed);
-
-//     const displayAmount = displayAmount;
-//     const displayAmountToNumValue
-//     const displayAmountToNum = parseFloat(displayAmountToNumValue.value);
-
-//     const donateAmountShow = displayAmountToNumValue + inputValue;
-    
-
-// }
-
-
-
-// const donateButton = document.getElementById('donateButton');
-// donateButton.addEventListener('click', function(){
-//     const input = document.getElementById('input');
-//     const inputValue = parseFloat(input.value);
-    
-//     const balance = document.getElementById('balance');
-//     const balanceToNum = parseFloat(balance.innerText);
-
-//     if(balance < 0 || balanceToNum < inputValue){
-//         alert('you have no enough money');
-//         return;
-//     }
-
-//     const displayAmount = document.getElementById('donateDisplay');
-//     const displayAmountToNum = parseFloat(displayAmount.innerText);
-
-//     const addAmount = displayAmountToNum + inputValue;
-//     displayAmount.innerText = addAmount;
-
-//     const subtractAmount = balanceToNum - inputValue;
-//     balance.innerText = subtractAmount;
-
-// });
-
 // calculate function
 function calculateBalance(input, balance, displayAmount, location){
     const inputField = input;
@@ -175,15 +129,16 @@ function calculateBalance(input, balance, displayAmount, location){
     const balanceValue = mainBalance.innerText;
     const balanceToFixed = parseFloat(balanceValue).toFixed(2);
     const balanceToNum = parseFloat(balanceToFixed);
-
+    
     if(isNaN(inputValue)){
         mainBalance.innerText = balanceValue;
+        alert('Invalid input amount!')
         return;
     };
 
     if(inputValue === 0 || inputValue < 0){
-        alert('We not kidding with you');
-        inputField.value = ''        
+        alert('Invalid input amount!');
+        inputField.value = '';
         return;
     };
 
@@ -204,7 +159,10 @@ function calculateBalance(input, balance, displayAmount, location){
     
     inputField.value = '';
 
-    historyTab(donateAmountShow, location)
+    const modal = document.getElementById('modal');
+    modal.showModal();
+
+    historyTab(inputValue, location);
     
     return;
 };
@@ -243,6 +201,10 @@ donateButtonOne.addEventListener('click', function(){
     const displayAmountOne = document.getElementById('donateDisplay-1');
     const location = "Donated for Flood at Noakhali-2024";
 
+
+    const modal = document.getElementById('modal');
+    modal.classList.remove('hidden');
+
     calculateBalance(inputOne, balance, displayAmountOne, location);
 });
 
@@ -264,4 +226,11 @@ donateButtonThree.addEventListener('click', function(){
     const location = "Donated for Aid for Injured in the Quota Movement"
 
     calculateBalance(inputThree, balance, displayAmountThree, location);
+});
+
+// modal functionality
+const modalBtn = document.getElementById('modalBtn');
+modalBtn.addEventListener('click', function(){
+    const modal = document.getElementById('modal');
+    modal.classList.add('hidden')
 });

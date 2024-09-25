@@ -11,13 +11,13 @@ openBtn.addEventListener('click', function(){
     );
 });
 
-function addOrRemove(addId, removeId){
-    const add = addId;
+function addOrRemove(addClass, removeClass){
+    const add = addClass;
     add.classList.add(
         "right-[-120%]"
     );
 
-    const remove = removeId;
+    const remove = removeClass;
     remove.classList.remove(
         "right-[0%]"
     );
@@ -39,7 +39,6 @@ navLink.addEventListener('click', function(){
 
 // blog page to home page switching event
 const homeBtn = document.getElementById('homeBtn');
-
 homeBtn.addEventListener('click', function(){
     window.location.href = '../index.html?#';
 });
