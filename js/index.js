@@ -131,8 +131,12 @@ function calculateBalance(input, balance, displayAmount, location){
     const balanceToNum = parseFloat(balanceToFixed);
     
     if(isNaN(inputValue)){
+        return;
+    };
+
+    if(isNaN(inputValue)){
         mainBalance.innerText = balanceValue;
-        alert('Invalid input amount!')
+        alert('Invalid input amount!');
         return;
     };
 
