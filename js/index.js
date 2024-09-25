@@ -117,3 +117,123 @@ const blogBtn = document.getElementById('blogBtn');
 blogBtn.addEventListener('click', function(){
     window.location.href = '../blog.html?#';
 });
+
+// calculation part
+
+// function for calculation
+// function calculateBalance(input, balance, displayAmount){
+//     const input = input;
+//     const inputValue = parseFloat(input.value);
+
+//     const balance = balance;
+//     const balanceValue = balance.innerText;
+//     const balanceToFixed = balanceValue.toFixed(2);
+//     const balanceToNum = parseFloat(balanceToFixed);
+
+//     const displayAmount = displayAmount;
+//     const displayAmountToNumValue
+//     const displayAmountToNum = parseFloat(displayAmountToNumValue.value);
+
+//     const donateAmountShow = displayAmountToNumValue + inputValue;
+    
+
+// }
+
+
+
+// const donateButton = document.getElementById('donateButton');
+// donateButton.addEventListener('click', function(){
+//     const input = document.getElementById('input');
+//     const inputValue = parseFloat(input.value);
+    
+//     const balance = document.getElementById('balance');
+//     const balanceToNum = parseFloat(balance.innerText);
+
+//     if(balance < 0 || balanceToNum < inputValue){
+//         alert('you have no enough money');
+//         return;
+//     }
+
+//     const displayAmount = document.getElementById('donateDisplay');
+//     const displayAmountToNum = parseFloat(displayAmount.innerText);
+
+//     const addAmount = displayAmountToNum + inputValue;
+//     displayAmount.innerText = addAmount;
+
+//     const subtractAmount = balanceToNum - inputValue;
+//     balance.innerText = subtractAmount;
+
+// });
+
+// calculate function
+function calculateBalance(input, balance, displayAmount){
+    const inputField = input;
+    const inputValue = parseFloat(inputField.value);
+
+    
+    const mainBalance = balance;
+    const balanceValue = mainBalance.innerText;
+    const balanceToFixed = parseFloat(balanceValue).toFixed(2);
+    const balanceToNum = parseFloat(balanceToFixed);
+
+    if(isNaN(inputValue)){
+        mainBalance.innerText = balanceValue;
+        return;
+    };
+
+    const displayAmountNum = displayAmount;
+    const displayAmountToNumValue = displayAmountNum.innerText;
+    const displayAmountToNum = parseFloat(displayAmountToNumValue);
+    
+    if(mainBalance < 0 || balanceValue < inputValue){
+        alert('you have no more enough money in your account');
+        return;
+    };
+    
+    const donateAmountShow = displayAmountToNum + inputValue;
+    displayAmountNum.innerText = donateAmountShow;
+    
+    const donateAmountSubtractToBalance = balanceToNum - inputValue;
+    mainBalance.innerText = donateAmountSubtractToBalance;
+    
+    inputField.value = '';
+    
+    return;
+};
+
+const donateButtonOne = document.getElementById('donateButton-1');
+donateButtonOne.addEventListener('click', function(){
+    const inputOne = document.getElementById('input-1');
+    const balance = document.getElementById('balance');
+    const displayAmountOne = document.getElementById('donateDisplay-1');
+
+    if(inputOne === ''){
+        balance.innerText;
+        return;
+    };
+
+    // emptyValidation(inputOne, balance);
+    calculateBalance(inputOne, balance, displayAmountOne);
+});
+
+const donateButtonTwo = document.getElementById('donateButton-2');
+donateButtonTwo.addEventListener('click', function(){
+    const inputTwo = document.getElementById('input-2');
+    const balance = document.getElementById('balance');
+    const displayAmountTwo = document.getElementById('donateDisplay-2');
+
+    // emptyValidation(inputTwo, balance);
+    calculateBalance(inputTwo, balance, displayAmountTwo);
+});
+
+const donateButtonThree = document.getElementById('donateButton-3');
+donateButtonThree.addEventListener('click', function(){
+    const inputThree = document.getElementById('input-3');
+    const balance = document.getElementById('balance');
+    const displayAmountThree = document.getElementById('donateDisplay-3');
+
+    // emptyValidation(inputThree, balance);
+    calculateBalance(inputThree, balance, displayAmountThree);
+});
+
+// history tab functionality
