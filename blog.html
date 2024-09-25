@@ -18,8 +18,8 @@
         tailwind.config = {
           theme: {
             extend: {
-              colors: {
-                clifford: '#da373d',
+              fontFamily:{
+                lexend:"Lexend"
               }
             }
           }
@@ -28,15 +28,115 @@
 </head>
 <body>
     <!-- ============ header section ============ -->
-    <header></header>
+    <header id="stickyNav" class="w-full sticky top-0 z-10">
+      <!-- ============ navbar -->
+      <div class="w-full bg-[#F9F7F3]">
+        <div class="container mx-auto px-4">
+            <div class="py-6 flex items-center justify-between lg:pt-0 lg:pb-6 lg:min-h-[140px]">
+                <!-- ============ Home button -->
+                <button id="homeBtn" class="bg-[#B4F461] border border-[#B4F461] py-3 px-8 rounded-lg font-lexend text-xl leading-[25px] font-semibold text-[#111111] hidden transition duration-200 ease-in-out hover:bg-white hover:border hover:border-[#1111114D] hover:text-[#111111B3] lg:block">Home</button>
+                <!-- ============ logo -->
+                <div class="flex items-center gap-x-4">
+                    <img src="./assets/money-img/logo.png" alt="logo" class="size-[38px] lg:size-[48px]">
+                    <h1 class="font-lexend text-xl leading-[25px] font-semibold text-[#111111] hidden lg:block">Donate Bangladesh</h1>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <img src="./assets/money-img/coin.png" alt="coin icon" class="size-[27px]">
+                    <h1 class="font-lexend text-xl font-medium text-[#111111B3]"><span>10000</span> BDT</h1>
+                </div>
+                <!-- ============ mobile bar -->
+                <div id="openBtn" class="cursor-pointer lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- ============ mobile responsive side bar -->
+      <div id="mobileNav" class="w-full sm:w-[400px] h-screen bg-white/80 backdrop-blur-md fixed top-[0%] right-[-120%] duration-500">
+        <!-- ============ close btn -->
+        <div id="closeBtn" class="w-[30px] h-[30px] flex items-center justify-center ml-6 mt-6 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <!-- ============ nav link list -->
+        <div class="w-full mt-10">   
+            <a href="#" id="navLink" class="py-4 px-7 bg-[#B4F461] block font-lexend text-base font-medium text-[#111111]">Home</a>
+        </div>
+      </div>
+    </header>
 
     <!-- ============ main section ============ -->
-    <main></main>
+    <main class="container mx-auto px-4">
+      <div class="w-full my-[40px]">
+        <h1 class="font-lexend text-2xl font-semibold xl:text-3xl">Important FAQ</h1>
+      </div>
+      <div class="w-full flex flex-col items-center justify-between gap-y-[50px] xl:flex-row-reverse">
+        <!-- ========== faq image -->
+        <div class="w-[250px] sm:w-[300px] md:w-[350px] xl:w-[800px] xl:h-[700px] 2xl:h-[670px] flex items-center xl:justify-end 2xl:justify-end">
+          <img src="./assets/faq-img/faq.png" alt="" class="grayscale">
+        </div>
+        <!-- ========== Accordion -->
+        <div class="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] flex flex-col gap-y-4 lg:gap-y-7">
+          <!-- ========= accordion 1 -->
+          <div class="w-full">
+              <div class="collapse collapse-plus bg-white border border-[#1111111A] rounded-lg px-2 py-2 lg:rounded-2xl md:px-3 md:py-3">
+                  <input type="radio" name="my-accordion-3" checked="checked" />
+                  <div class="collapse-title text-xl font-medium flex items-center">
+                      <h1 class="font-lexend text-lg leading-[32px] font-semibold text-[#111111] lg:text-xl">1. What is the Document Object Modal (DOM) ?</h1>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="font-lexend text-base leading-7 font-light text-[#111111B3]">Document Object Model the short from is (DOM). DOM is a programming interface for web documents. DOM can change web documents style, structure, tag, element etc. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page</p>
+                  </div>
+              </div>
+          </div>
+          <!-- ========= accordion 2 -->
+          <div class="w-full">
+              <div class="collapse collapse-plus bg-white border border-[#1111111A] rounded-lg px-2 py-2 lg:rounded-2xl md:px-3 md:py-3">
+                  <input type="radio" name="my-accordion-3" checked="checked" />
+                  <div class="collapse-title text-xl font-medium flex items-center">
+                      <h1 class="font-lexend text-lg leading-[32px] font-semibold text-[#111111] lg:text-xl">2. How do you select an element from the DOM ?</h1>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="font-lexend text-base leading-7 font-light text-[#111111B3]">In JavaScript they are provide 5 different DOM access method. 
+                      <br>This method is: getElementByClassName(), getElementByTagName(), getElementById)(), querySelector(), querySelectorAll(). Single element selector is getElementById() and querySelector(). And JavaScript also have multiple element selector is getElementByClassName(), getElementByTagName(), querySelectorAll(). I can use those method for select DOM element.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- ========= accordion 3 -->
+          <div class="w-full">
+              <div class="collapse collapse-plus bg-white border border-[#1111111A] rounded-lg px-2 py-2 lg:rounded-2xl md:px-3 md:py-3">
+                  <input type="radio" name="my-accordion-3" checked="checked" />
+                  <div class="collapse-title text-xl font-medium flex items-center">
+                      <h1 class="font-lexend text-lg leading-[32px] font-semibold text-[#111111] lg:text-xl">3. What is event delegation in the context of the DOM, and why is it useful ?</h1>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="font-lexend text-base leading-7 font-light text-[#111111B3]">The process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- ========= accordion 4 -->
+          <div class="w-full">
+              <div class="collapse collapse-plus bg-white border border-[#1111111A] rounded-lg px-2 py-2 lg:rounded-2xl md:px-3 md:py-3">
+                  <input type="radio" name="my-accordion-3" checked="checked" />
+                  <div class="collapse-title text-xl font-medium flex items-center">
+                      <h1 class="font-lexend text-lg leading-[32px] font-semibold text-[#111111] lg:text-xl">4. How do you manipulate an element's attributes and styles using the DOM ?</h1>
+                  </div>
+                  <div class="collapse-content">
+                    <p class="font-lexend text-base leading-7 font-light text-[#111111B3]">First of all select the element. Which element you like to change the style. You can select an element easy with the DOM. JavaScript provide more different type of method for styling an element. Those method is: getAttribute(), setAttribute(), removeAttribute(), style property and also have classList.add(), classList.remove(). And many more.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- ============ footer section ============ -->
     <footer></footer>
 
     <!-- ============ javascript link ============ -->
-    <script src="./js/index.js"></script>
+    <script src="./js/blog.js"></script>
 </body>
 </html>

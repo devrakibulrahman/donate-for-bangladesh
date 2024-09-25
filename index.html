@@ -29,11 +29,12 @@
 <body>
     <!-- ============ header section ============ -->
     <header id="stickyNav" class="w-full sticky top-0">
+        <!-- ============ navbar -->
         <div class="w-full bg-[#F9F7F3]">
             <div class="container mx-auto px-4">
                 <div class="py-6 flex items-center justify-between lg:pt-0 lg:pb-6 lg:min-h-[140px]">
                     <!-- ============ blog button -->
-                    <button class="bg-[#B4F461] py-3 px-8 rounded-lg font-lexend text-xl leading-[25px] font-semibold text-[#111111] hidden lg:block">Blog</button>
+                    <button id="blogBtn" class="bg-[#B4F461] border border-[#B4F461] py-3 px-8 rounded-lg font-lexend text-xl leading-[25px] font-semibold text-[#111111] hidden transition duration-200 ease-in-out hover:bg-white hover:border hover:border-[#1111114D] hover:text-[#111111B3] lg:block">Blog</button>
                     <!-- ============ logo -->
                     <div class="flex items-center gap-x-4">
                         <img src="./assets/money-img/logo.png" alt="logo" class="size-[38px] lg:size-[48px]">
@@ -55,7 +56,7 @@
         <!-- ============ donate and history button -->
         <div class="w-full h-[110px] bg-white/40 backdrop-blur-md flex items-center justify-center gap-x-3 pt-6 lg:h-[140px]">
             <button id="donateBtn" class="py-3 px-5 bg-[#B4F461] border border-[#B4F461] rounded-md font-lexend text-base font-semibold text-[#111111] lg:py-4 lg:px-8 lg:text-xl lg:leading-[25px]">Donate</button>
-            <button id="historyBtn" class="py-3 px-5 bg-white border border-[#1111114D] rounded-md font-lexend text-base font-semibold text-[#111111B3] hover:bg-[#B4F461] hover:border-[#B4F461] hover:text-[#111111] lg:py-4 lg:px-8 lg:text-xl lg:leading-[25px]">History</button>
+            <button id="historyBtn" class="py-3 px-5 bg-white border border-[#1111114D] rounded-md font-lexend text-base font-semibold text-[#111111B3] transition duration-200 ease-in-out hover:bg-[#B4F461] hover:border-[#B4F461] hover:text-[#111111] lg:py-4 lg:px-8 lg:text-xl lg:leading-[25px]">History</button>
         </div>
         <!-- ============ mobile responsive side bar -->
         <div id="mobileNav" class="w-full sm:w-[400px] h-screen bg-white/80 backdrop-blur-md fixed top-[0%] right-[-120%] duration-500">

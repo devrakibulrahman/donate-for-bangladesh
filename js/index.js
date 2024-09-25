@@ -111,3 +111,9 @@ donateBtn.addEventListener('click', function(){
 
     tabBtnSwitch(donateBtn, donateBtn, historyBtn, historyBtn, historyTab, donateTab);
 });
+
+// home page to blog page switching event
+const blogBtn = document.getElementById('blogBtn');
+blogBtn.addEventListener('click', function(){
+    window.location.href = '../blog.html?#';
+});
