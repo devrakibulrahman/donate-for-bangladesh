@@ -129,10 +129,6 @@ function calculateBalance(input, balance, displayAmount, location){
     const balanceValue = mainBalance.innerText;
     const balanceToFixed = parseFloat(balanceValue).toFixed(2);
     const balanceToNum = parseFloat(balanceToFixed);
-    
-    if(isNaN(inputValue)){
-        return;
-    };
 
     if(isNaN(inputValue)){
         mainBalance.innerText = balanceValue;
